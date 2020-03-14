@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">
+            <h1 class="greeting">Welcome</h1>
+            <div id="userInfo"></div>
+        </div>
+        <div class="logout">
+            <button class="login-page" onlick="LoginPage">Logout</button>
+        </div>
+    </div>
+    <!-- Added this from Firebase Project, should remain at the bottom of the body-->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script defer src="js/login.js"></script> -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>  
+      <script src="index.js"></script>
+<!-- <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDfnVaOVNUF4-07j5tZ7W4vGpaKRBtl7dA",
+    authDomain: "challenge-2-d2dcf.firebaseapp.com",
+    databaseURL: "https://challenge-2-d2dcf.firebaseio.com",
+    projectId: "challenge-2-d2dcf",
+    storageBucket: "challenge-2-d2dcf.appspot.com",
+    messagingSenderId: "432914722093",
+    appId: "1:432914722093:web:3719db749fd757343137a4",
+    measurementId: "G-LS4FW817BZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script> -->
+</body>
+</html>
