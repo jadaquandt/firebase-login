@@ -1,31 +1,33 @@
 
 window.addEventListener("DOMContentLoaded", event => {
   console.log("DOM fully loaded and parsed");
-  const firebaseConfig = {
-    apiKey: "AIzaSyDfnVaOVNUF4-07j5tZ7W4vGpaKRBtl7dA",
-    authDomain: "challenge-2-d2dcf.firebaseapp.com",
-    databaseURL: "https://challenge-2-d2dcf.firebaseio.com",
-    projectId: "challenge-2-d2dcf",
-    storageBucket: "challenge-2-d2dcf.appspot.com",
-    messagingSenderId: "432914722093",
-    appId: "1:432914722093:web:3719db749fd757343137a4",
-    measurementId: "G-LS4FW817BZ"
-  };
 
-  firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       var uiConfig = {
           callbacks: {
             signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-              console.log(authResult);
-                return true;
+              const main = document.getElementById('main');
+              main.innerHTML=`<div class="container">
+              <div class="welcome">
+                  <h1 class="greeting">Welcome</h1>
+                  <div><img src="${authResult.user.photoURL}" /></div>
+                  <div id="userInfo">${authResult.user.displayName}</div>
+              </div>
+              <div class="logout">
+                  <button class="login-page" onlick="LoginPage">Logout</button>
+              </div>
+          </div>`
+            
+                return false;
             },
             uiShown: function() {
               document.getElementById('loader').style.display = 'none';
             }
           },
           signInFlow: 'popup',
-          signInSuccessUrl: 'dashboard.html',
+         
           signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                        ],
@@ -36,7 +38,7 @@ window.addEventListener("DOMContentLoaded", event => {
   
 });
 
-
+//signInSuccessUrl: 'dashboard.html'
 
 
 // Initialize Firebase4
