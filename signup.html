@@ -17,21 +17,12 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Email/Password Authentication Example</title>
 
-  <!-- Material Design Theming -->
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="main.css">
-
-  <!-- Import and configure the Firebase SDK -->
-  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-  <script src="/__/firebase/7.10.0/firebase-app.js"></script>
-  <script src="/__/firebase/7.10.0/firebase-auth.js"></script>
-  <script src="/__/firebase/init.js"></script>
-
-    <script>index.js</script>
+    
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -40,7 +31,7 @@ limitations under the License.
   <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-        <a href="/"><h3>Firebase Authentication</h3></a>
+        <h3>Firebase Authentication</h3>
       </div>
     </div>
   </header>
@@ -55,7 +46,7 @@ limitations under the License.
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
           <p>Enter an email and password below and either sign in to an existing account or sign up</p>
-
+            <form id="form">
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
@@ -67,31 +58,37 @@ limitations under the License.
           <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-
+                </form>
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
           </div>
+
+          <div class="form-login"></br>
+          </br>
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
+          </br></br>
+          <div class="wrapper">
+                  <span class="group-btn">
+                  </span>
+          </div>
+      </div>
         </div>
       </div>
 
     </div>
   </main>
 </div>
-<body>
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- <script defer src="js/login.js"></script> -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>  
+    <script src="index.js"></script>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-</body>
 </body>
 </html>

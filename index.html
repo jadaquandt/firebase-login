@@ -10,18 +10,29 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css">
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
     <body>
         <div class="container-fluid">
             <div class="row d-flex justify-content-between bg-secondary text-white p-5">
                 <h2 class="display-5">Welcome to the Firebase Login Challenge</h2>
-                <a href="signup.html" class="btn btn-success">Login/Signup</a>
+                <button id="signup" class="btn btn-success">Login/Signup</button>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <p>General information about this particular challenge. Will fill this out later</p>
             </div>
+            </br>
+
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+
         </div>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+         
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
