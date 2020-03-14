@@ -33,6 +33,7 @@ window.addEventListener("DOMContentLoaded", event => {
           privacyPolicyUrl: '<your-privacy-policy-url>'
         };
   ui.start('#firebaseui-auth-container', uiConfig);
+  
 });
 
 
