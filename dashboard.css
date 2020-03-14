@@ -1,0 +1,14 @@
+.container{
+    text-align: center;
+}
+
+.welcome{
+    display: inline-block;
+}
+
+.greeting{
+    font-family: Arial;
+    font-weight: bold;
+    display: inline-block;
+}
+
