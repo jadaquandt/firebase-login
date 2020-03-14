@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css" />
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="dashboard.css"/>
 </head>
 <body>
     <div class="container">
@@ -14,23 +13,18 @@
             <div id="userInfo"></div>
         </div>
         <div class="logout">
-            <button class="login-page" onlick="*Login Page*">Logout</button>
+            <button class="login-page" onlick="LoginPage">Logout</button>
         </div>
     </div>
-
-
-
-    <!-- Added this from Firebase, should remain at the bottom of the body-->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-<script src="/__/firebase/7.11.0/firebase-auth.js"></script>
-<script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
-
-<script>
+    <!-- Added this from Firebase Project, should remain at the bottom of the body-->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script defer src="js/login.js"></script> -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>  
+      <script src="index.js"></script>
+<!-- <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDfnVaOVNUF4-07j5tZ7W4vGpaKRBtl7dA",
@@ -45,6 +39,6 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-</script>
+</script> -->
 </body>
 </html>
